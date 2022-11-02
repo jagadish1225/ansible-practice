@@ -1,0 +1,19 @@
+- name: Play for vars
+  hosts: all
+  vars: 
+    URL: www.google.com
+  tasks:
+    - name: print a value
+      ansible.builtin.debug:
+        msg: URL - {{URL}}
+
+
+
+- name: Play for variable files
+  host: all
+  vars_files:
+    - sample2.yml
+  tasks:
+    - name: print URL
+      ansible.builtin.debug:
+        msg: URL - {{URL}}
